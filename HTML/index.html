@@ -6,15 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+
+    <link rel="stylesheet" href="../CSS/carrusel.css">
     <link rel="stylesheet" href="../CSS/style.css">
-    
-</head>
-
-<body>
-
-</body>
-
-</html>
 
 </head>
 
@@ -27,29 +21,32 @@
         <ul class="menu">
 
             <li>
-                <label for="drop-1" class="toggle">Nuevo Cliente +</label>
-                <a href="#">Nuevo Cliente</a>
+                <label for="drop-1" class="toggle">Nuevo Comprador +</label>
+                <a href="#">Nuevo Comprador</a>
                 <input type="checkbox" id="drop-1" />
                 <ul>
-                    <li><a href="#">Cargar Cliente</a></li>
+                    <li><a href="#">Cargar Comprador</a></li>
+                    <li><a href="#">Entradas</a></li>
                 </ul>
             </li>
 
             <li>
-                <label for="drop-2" class="toggle">Tutores +</label>
-                <a href="#">Tutores</a>
+                <label for="drop-2" class="toggle">Empleados +</label>
+                <a href="#">Empleados</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a href="#">Listar Tutores</a></li>
+                    <li><a href="#">Cargar Empleados</a></li>
+                    <li><a href="#">Listar Empleados</a></li>
                 </ul>
             </li>
 
             <li>
-                <label for="drop-2" class="toggle">Perros +</label>
-                <a href="#">Perros</a>
+                <label for="drop-2" class="toggle">Juegos +</label>
+                <a href="#">Juegos</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a href="#">Listar Perros</a></li>
+                    <li><a href="#">Cargar Juegos</a></li>
+                    <li><a href="#">Listar Juegos</a></li>
                 </ul>
             </li>
 
@@ -78,6 +75,149 @@
 
         </ul>
     </nav>
+
+    <div class="card-swiper">
+        <div class="card-groups">
+            <div class="card-group" data-index="0" data-status="active">
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+            </div>
+            <div class="card-group" data-index="1" data-status="unknown">
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+            </div>
+            <div class="card-group" data-index="2" data-status="unknown">
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+            </div>
+            <div class="card-group" data-index="3" data-status="unknown">
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+            </div>
+            <div class="card-group" data-index="4" data-status="unknown">
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+                <div class="little-card card">
+
+                </div>
+                <div class="big-card card">
+
+                </div>
+            </div>
+        </div>
+        <div class="card-swiper-buttons">
+            <button id="hate-button" onclick="handleHateClick()">
+                <i class="fa-solid fa-left"></i>
+            </button>
+            <button id="love-button" onclick="handleLoveClick()">
+                <i class="fa-solid fa-right"></i>
+            </button>
+        </div>
+    </div>
 
 
 
@@ -109,6 +249,8 @@
 
 
     </div>
+
+    <script src="../JS/carrusel.js"></script>
 
 </body>
 

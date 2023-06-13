@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro comprador</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/registro.css">
 
@@ -78,19 +78,24 @@
     <div class="contenedorregistro">
 
         <form class="form">
-            <span class="signup">Registro Compradores</span>
-            <label class="palabrainput" style="font-size: 12px;" for="name">Nombre*</label>
-            <input type="text" name="name" required placeholder="Ingrese nombre" class="form--input">
-            <label class="palabrainput" style="font-size: 12px;" for="name">Apellido*</label>
-            <input type="text" name="name" required placeholder="Ingrese apellido" class="form--input">
-            <label class="palabrainput" style="font-size: 12px;" for="name">DNI*</label>
-            <input type="text" name="name" required placeholder="Ingrese documento" class="form--input">
-            <label class="palabrainput" style="font-size: 12px;" for="name">Correo Electrónico*</label>
-            <input type="email" name="email" required placeholder="Ingrese correo" class="form--input">
-            <label class="palabrainput"  for="name">Fecha de Nacimiento*</label>
-            <input type="date" name="age" id="number" min="18" max="99" placeholder="Age" class="form--input">
-            
-            
+            <span class="signup">Registrate</span>
+            <input type="text" placeholder="Nombre" class="form--input">
+            <input type="email" placeholder="Correo electrónico" class="form--input">
+            <input type="password" placeholder="Contraseña" class="form--input">
+            <input type="password" placeholder="Confirmar Contraseña" class="form--input">
+
+            <div class="subirimagen">
+                <span class="subirimagen-title">Cargá tú imagen</span>
+                <p class="subirimagen-paragraph">
+                    Solo formato .jpg
+                  </p>
+                 <label for="file-input" class="drop-container">
+                
+                <input type="file" accept="image/*" required="" id="file-input">
+              </label>
+            </div>
+
+
 
             <button class="form--submit">
                 Registrar
@@ -133,51 +138,3 @@
 </body>
 
 </html>
-    <!-- <div class="contenedor">
-        <div class="container">
-            <article>
-                
-                <p id="description"></p>
-                <form id="survey-form">
-                    <div class="form-group">
-                        <h1 id="title">Registro de compradores</h1>
-                        <br>
-                        
-                        <strong> <label for="name" id="name-label">
-                                Nombre*
-                            </label></strong>
-                        <input type="text" name="name" required placeholder="Ingrese nombre" id="name">
-                        <strong> <label for="name" id="name-label">
-                                Apellido*
-                            </label></strong>
-                        <input type="text" name="name" required placeholder="Ingrese apellido" id="name">
-                        <strong> <label for="name" id="name-label">
-                                DNI*
-                            </label></strong>
-                        <input type="text" name="name" required placeholder="Ingrese documento" id="name">
-                        <strong>
-                            <label for="email" id="email-label">
-                                Correo Electrónica*
-                            </label>
-                        </strong>
-                        <input type="email" name="email" required placeholder="Ingrese correo" id="email" required>
-                        <strong>
-                            <label id="number-label" for="numbre">Fecha de nacimiento* <span
-                                    class="clue"></span></label>
-                        </strong>
-                        <input type="date" name="age" id="number" min="10" max="99" placeholder="Age" />
-
-                        <strong> <label for="name" id="name-label">
-                                Fecha de alta*
-                            </label></strong>
-                        <input type="date" name="name" required placeholder="Ingrese nombre" id="name">
-
-                        
-                        <button type="submit" id="submit">
-                            Submit
-                        </button>
-                </form>
-            </article>
-        </div>
-
-    </div> -->

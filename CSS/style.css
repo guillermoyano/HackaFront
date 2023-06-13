@@ -26,6 +26,7 @@ body {
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
   background-image: url(../IMG/fondo.webp);
+  background-size: cover;
 }
 
 /* h1 {
@@ -76,7 +77,7 @@ nav {
   margin: 0;
   padding: 0 0 0 0;
   background-color: #f461c1;
-  top:0;
+  top: 0;
 }
 
 #logo {
@@ -201,7 +202,7 @@ li > a:only-child:after {
   /* Stylinf the toggle lable */
   .toggle {
     display: block;
-    background-color: #254441;
+    background-color: #f461c1;
     padding: 14px 20px;
     color: #fff;
     font-size: 17px;
@@ -210,7 +211,7 @@ li > a:only-child:after {
   }
 
   .toggle:hover {
-    background-color: #c44d58;
+    background-color: #4579e2;
   }
 
   /* Display Dropdown when clicked on Parent Lable */
@@ -235,7 +236,7 @@ li > a:only-child:after {
 
   nav a:hover,
   nav ul ul ul a {
-    background-color: #c44d58;
+    background-color: #f461c1;
     text-decoration: none;
     color: white;
   }
@@ -289,9 +290,6 @@ a {
   color: white; /* Cambia el color aquí */
 }
 
-
-
-
 /*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------Formulario--------------------------------------------- */
 /*----------------------------------------------------------------------------------------------*/
@@ -310,9 +308,8 @@ a {
   padding: 3em 0;
 } */
 
-
-#title{
-    padding-bottom: 30px;
+#title {
+  padding-bottom: 30px;
 }
 h1,
 .question {
@@ -350,10 +347,10 @@ h1,
   flex-direction: column;
 }
 #survey-form .form-group input {
-    margin: 5px 0 15px;
-    padding: 1.2em 1em;
-    /* margin: 5px 0 15px; */
-    /* padding: 1.2em 1em; */
+  margin: 5px 0 15px;
+  padding: 1.2em 1em;
+  /* margin: 5px 0 15px; */
+  /* padding: 1.2em 1em; */
 }
 #survey-form .form-group label {
   width: 115px;
@@ -401,175 +398,184 @@ h1,
   cursor: pointer;
 }
 
-
 * {
-    box-sizing: border-box;
-  }
-  .main {
-    background-color: #262626;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .button {
-    position: relative;
-    display: block;
-    width: 200px;
-    height: 36px;
-    border-radius: 18px;
-    background-color: #1c89ff;
-    border: solid 1px transparent;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 300;
-    cursor: pointer;
-    transition: all 0.1s ease-in-out;
-  }
-  .button:hover {
-    background-color: transparent;
-    border-color: #fff;
-    transition: all 0.1s ease-in-out;
-  }
-  .loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    margin: 30px auto 0 auto;
-    border: solid 2px #424242;
-    border-top: solid 2px #1c89ff;
-    border-radius: 50%;
-    opacity: 0;
-  }
-  .check {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translate3d(-4px, 50px, 0);
-    opacity: 0;
-  }
-  .check span:nth-child(1) {
-    display: block;
-    width: 10px;
-    height: 2px;
-    background-color: #fff;
-    transform: rotate(45deg);
-  }
-  .check span:nth-child(2) {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color: #fff;
-    transform: rotate(-45deg) translate3d(14px, -4px, 0);
-    transform-origin: 100%;
-  }
-  .loader.active {
-    animation: loading 2s ease-in-out;
-    animation-fill-mode: forwards;
-  }
-  .check.active {
+  box-sizing: border-box;
+}
+.main {
+  background-color: #262626;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #1c89ff;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.button:hover {
+  background-color: transparent;
+  border-color: #fff;
+  transition: all 0.1s ease-in-out;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  margin: 30px auto 0 auto;
+  border: solid 2px #424242;
+  border-top: solid 2px #1c89ff;
+  border-radius: 50%;
+  opacity: 0;
+}
+.check {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(-4px, 50px, 0);
+  opacity: 0;
+}
+.check span:nth-child(1) {
+  display: block;
+  width: 10px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.check span:nth-child(2) {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(-45deg) translate3d(14px, -4px, 0);
+  transform-origin: 100%;
+}
+.loader.active {
+  animation: loading 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.check.active {
+  opacity: 1;
+  transform: translate3d(-4px, 4px, 0);
+  transition: all 0.5s cubic-bezier(0.49, 1.74, 0.38, 1.74);
+  transition-delay: 0.2s;
+}
+@keyframes loading {
+  30% {
     opacity: 1;
-    transform: translate3d(-4px, 4px, 0);
-    transition: all 0.5s cubic-bezier(0.49, 1.74, 0.38, 1.74);
-    transition-delay: 0.2s;
   }
-  @keyframes loading {
-    30% {
-      opacity: 1;
-    }
-    85% {
-      opacity: 1;
-      transform: rotate(1080deg);
-      border-color: #262626;
-    }
-    100% {
-      opacity: 1;
-      transform: rotate(1080deg);
-      border-color: #1c89ff;
-    }
+  85% {
+    opacity: 1;
+    transform: rotate(1080deg);
+    border-color: #262626;
   }
-  
+  100% {
+    opacity: 1;
+    transform: rotate(1080deg);
+    border-color: #1c89ff;
+  }
+}
 
 /*----------------------------------------------------------------------------------------------*/
 /*--------------------------------------Cuerpo index------------------------------------------- */
 /*----------------------------------------------------------------------------------------------*/
 
-
+.contenedor {
+  display: fixed;
+  width: 100%;
+  height: 60px;
+  max-height: 60px;
+  margin: 0;
+  z-index: 5;
+  bottom: 0;
+  left: 0px;
+  float: left;
+  bottom: 0;
+}
 
 .editorial {
-    display: fixed;
-    width: 100%;
-    height: 60px;
-    max-height: 60px;
-    margin: 0;
-    z-index: 5;
-    bottom: 0;
-    left: 0px;
-    float: left;
-    bottom: 0;
+  display: fixed;
+  width: 100%;
+  height: 60px;
+  max-height: 60px;
+  margin: 0;
+  z-index: 5;
+  bottom: 0;
+  left: 0px;
+  float: left;
+  bottom: 0;
+}
+
+.parallax1 > use {
+  animation: move-forever1 10s linear infinite;
+  &:nth-child(1) {
+    animation-delay: -2s;
   }
-  
-  .parallax1 > use {
-    animation: move-forever1 10s linear infinite;
-    &:nth-child(1) {
-      animation-delay: -2s;
-    }
+}
+.parallax2 > use {
+  animation: move-forever2 8s linear infinite;
+  &:nth-child(1) {
+    animation-delay: -2s;
   }
-  .parallax2 > use {
-    animation: move-forever2 8s linear infinite;
-    &:nth-child(1) {
-      animation-delay: -2s;
-    }
+}
+.parallax3 > use {
+  animation: move-forever3 6s linear infinite;
+  &:nth-child(1) {
+    animation-delay: -2s;
   }
-  .parallax3 > use {
-    animation: move-forever3 6s linear infinite;
-    &:nth-child(1) {
-      animation-delay: -2s;
-    }
+}
+.parallax4 > use {
+  animation: move-forever4 4s linear infinite;
+  &:nth-child(1) {
+    animation-delay: -2s;
   }
-  .parallax4 > use {
-    animation: move-forever4 4s linear infinite;
-    &:nth-child(1) {
-      animation-delay: -2s;
-    }
+}
+@keyframes move-forever1 {
+  0% {
+    transform: translate(85px, 0%);
   }
-  @keyframes move-forever1 {
-    0% {
-      transform: translate(85px, 0%);
-    }
-    100% {
-      transform: translate(-90px, 0%);
-    }
+  100% {
+    transform: translate(-90px, 0%);
   }
-  @keyframes move-forever2 {
-    0% {
-      transform: translate(-90px, 0%);
-    }
-    100% {
-      transform: translate(85px, 0%);
-    }
+}
+@keyframes move-forever2 {
+  0% {
+    transform: translate(-90px, 0%);
   }
-  @keyframes move-forever3 {
-    0% {
-      transform: translate(85px, 0%);
-    }
-    100% {
-      transform: translate(-90px, 0%);
-    }
+  100% {
+    transform: translate(85px, 0%);
   }
-  @keyframes move-forever4 {
-    0% {
-      transform: translate(-90px, 0%);
-    }
-    100% {
-      transform: translate(85px, 0%);
-    }
+}
+@keyframes move-forever3 {
+  0% {
+    transform: translate(85px, 0%);
   }
+  100% {
+    transform: translate(-90px, 0%);
+  }
+}
+@keyframes move-forever4 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
