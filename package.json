@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "servor": "^4.0.2",
+    "stylelint": "^15.7.0",
+    "stylelint-config-manzdev": "^0.0.3"
+  }
+}
