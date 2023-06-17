@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Registro comprador</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/registro.css">
 
@@ -78,26 +78,49 @@
     <div class="contenedorregistro">
 
         <form class="form">
-            <span class="signup">Alta de empleado</span>
-            <input type="text" placeholder="Ingrese nombre del empleado" class="form--input">
-            <input type="text" placeholder="Ingrese Apellido del empleado" class="form--input">
-            <input type="text" placeholder="Ingrese Legajo/DNI del empleado" class="form--input">
-            <input type="password" placeholder="Contraseña" class="form--input">
-            <input type="password" placeholder="Confirmar Contraseña" class="form--input">
+            <span class="signup">Alta de atracción</span>
+            <label class="palabrainput" style="font-size: 12px;" for="name">Nombre del juego</label>
+            <input type="text" name="" required placeholder="Nombre del juego" class="form--input">
+            <label class="palabrainput" style="font-size: 12px;" for="name">Capacidad máxima</label>
+            <input type="number" name="" required placeholder="Capacidad máxima" class="form--input">
+
+
+            <label class="palabrainput" style="font-size: 12px;" for="name">Tipo de juego</label>
+            <input type="text" name="" required placeholder="Tipo de juego" class="form--input">
+
+
+            <label class="palabrainput" style="font-size: 12px;" for="tipo-juego">Tipo de atracción</label>
+            <select name="tipo-juego" id="tipo-juego" class="form--input" required>
+                <option value="">Seleccione un tipo de juego</option>
+                <option value="tranquilos">Juegos de adrenalina</option>
+                <option value="ruidosos">Juegos Familiares</option>
+                <option value="para-niños">Juegos Infantiles</option>
+                <option value="para-niños">Shows</option>
+            </select>
+
+
+
+
+            <label class="palabrainput" style="font-size: 12px;" for="name">Cantidad de empleados</label>
+            <input type="number" name="" required placeholder="Cantidad de empleados" class="form--input">
+            <label class="palabrainput" style="font-size: 12px;" for="name">Precio del juego</label>
+            <input type="text" name="" required placeholder="Precio del juego" class="form--input">
+
 
             <div class="subirimagen">
-                <span class="subirimagen-title">Cargá de imagen</span>
+                <span class="subirimagen-title">Cargá imagen del juego</span>
                 <p class="subirimagen-paragraph">
                     Solo formato .jpg
                 </p>
                 <label for="file-input" class="drop-container">
                     <div id="image-preview-container">
-                        <img style="width: 150px; border-radius: 20px;" id="image-preview" src="https://img.freepik.com/vector-premium/avatar-hombre-imagen-perfil-web-masculina-generica_53562-18550.jpg?w=2000"
+                        <img style="width: 150px; border-radius: 20px;" id="image-preview" src=""
                             alt="Vista previa de la imagen">
                     </div>
                     <input type="file" accept="image/*" required="" id="file-input">
                 </label>
             </div>
+
             <button class="form--submit">
                 Registrar
             </button>
@@ -135,6 +158,7 @@
     </div>
 
     <script src="../JS/carrusel.js"></script>
+    <script src="../JS/tipodejuego.js"></script>
     <script src="../JS/formularioFoto.js"></script>
 
 </body>
