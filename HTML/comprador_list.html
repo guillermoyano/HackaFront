@@ -1,90 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org%22%3E/">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-
-    <link rel="stylesheet" href="../CSS/carrusel.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Lista de Compradores</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/CSS/carrusel.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/styleborrar.css">
 
 </head>
 
 <body>
-    <nav>
-        <div id="logo"></div>
 
-        <label for="drop" class="toggle">Menu</label>
-        <input type="checkbox" id="drop" />
-        <ul class="menu">
+    <nav th:replace="/fragments/navbar :: nav"> </nav>
 
+    <!-- <div class="row justify-content-center">
+        <div class="col-md-4 mt-5">
+            <div class="alert alert-success" th:if="${success != null}" th:text="${success}"></div>
+        </div>
+    </div>
 
-            <li><a href="login.html">Logueate</a></li>
-            <li><a href="index.html">Inicio</a></li>
+    <div class="row justify-content-center">
+        <div class="col-md-4 mt-5">
+            <div class="alert alert-danger" th:if="${error != null}" th:text="${error}"></div>
+        </div>
+    </div> -->
 
-        </ul>
-    </nav>
     <div class="contenedorCentro">
 
-    <table class="zigzag">
-        <thead>
-            <tr>
-                <th class="header">Legajo</th>
-                <th class="header">Nombre</th>
-                <th class="header">Apellido</th>
-                <th class="header">Estado</th>
-                <th class="header">Puesto</th>
-                <th class="header">Asignar Puesto</th>
-                <th class="header">Juego Asignado</th>
-                <th class="header">Asignar Juego</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Wayne Rooney</td>
-                <td>53</td>
-                <td>06 Sep 2003</td>
-                <td>27 Jun 2016</td>
-                <td>Wayne Rooney</td>
-                <td>53</td>
-                <td>06 Sep 2003</td>
-                <td>27 Jun 2016</td>
-            </tr>
-            <tr>
-                <td>Bobby Charlton</td>
-                <td>49</td>
-                <td>19 Apr 1958</td>
-                <td>20 May 1970</td>
-                <td>Wayne Rooney</td>
-                <td>53</td>
-                <td>06 Sep 2003</td>
-                <td>27 Jun 2016</td>
-            </tr>
-            <tr>
-                <td>Bobby Charlton</td>
-                <td>49</td>
-                <td>19 Apr 1958</td>
-                <td>20 May 1970</td>
-                <td>Wayne Rooney</td>
-                <td>53</td>
-                <td>06 Sep 2003</td>
-                <td>27 Jun 2016</td>
-            </tr>
-            <tr>
-                <td>Bobby Charlton</td>
-                <td>49</td>
-                <td>19 Apr 1958</td>
-                <td>20 May 1970</td>
-                <td>Wayne Rooney</td>
-                <td>53</td>
-                <td>06 Sep 2003</td>
-                <td>27 Jun 2016</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+        <table class="zigzag">
+            <thead>
+                <tr>
+                    <th class="header">Id</th>
+                    <th class="header">Nombre y Apellido</th>
+                    <th class="header">Dni</th>
+                    <th class="header">Edad</th>
+                    <th class="header">Fecha de Alta</th>
+                    <th class="header">Estado</th>
+                    <th class="header">Email</th>
+                    <th class="header">Modificar</th>
+                    <th class="header">Cambiar Estado</th>
+                    <th class="header">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody th:each="compradores : ${compradores}">
+                <tr>
+                    <th scope="row" th:text="${compradores.id}"></th>
+                    <td th:text="${compradores.nombreApellido}"></td>
+                    <td th:text="${compradores.dni}"></td>
+                    <td th:text="${compradores.edad}"></td>
+                    <td th:text="${compradores.fechaDeAlta}"></td>
+                    <td th:text="${compradores.activo  ? 'Activo' : 'Inactivo'}"></td>
+                    <td th:text="${compradores.email}"></td>
+                    <td>
+                        <a th:href="@{/compradores/modificar/__${compradores.id}__}"
+                            class="btn btn-primary">Modificar</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/compradores/modificarEstado/__${compradores.id}__}"><button type="button"
+                                class="btn btn-secondary btn-sm">Cambiar</button></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" th:href="@{/compradores/eliminar/__${compradores.id}__}">Eliminar </a>
+                    </td>
+                </tr>
+
+            </tbody>
+
+    </div>
 
 
     <div class="contenedor">
@@ -93,11 +81,11 @@
             viewBox="0 24 150 28 " preserveAspectRatio="none">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 
-    58-18 88-18s
-    58 18 88 18 
-    58-18 88-18 
-    58 18 88 18
-    v44h-352z" />
+                                                              58-18 88-18s
+                                                              58 18 88 18 
+                                                              58-18 88-18 
+                                                              58 18 88 18
+                                                              v44h-352z" />
             </defs>
             <g class="parallax1">
                 <use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1" />

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agregar personas al grupo</title>
+    <script>
+        function agregarCampo() {
+            var contenedor = document.getElementById("contenedor");
+
+            var div = document.createElement("div");
+
+            var nombreLabel = document.createElement("label");
+            nombreLabel.innerHTML = "Nombre:";
+            var nombreInput = document.createElement("input");
+            nombreInput.type = "text";
+            nombreInput.name = "nombre";
+
+            var apellidoLabel = document.createElement("label");
+            apellidoLabel.innerHTML = "Apellido:";
+            var apellidoInput = document.createElement("input");
+            apellidoInput.type = "text";
+            apellidoInput.name = "apellido";
+
+            var dniLabel = document.createElement("label");
+            dniLabel.innerHTML = "DNI:";
+            var dniInput = document.createElement("input");
+            dniInput.type = "text";
+            dniInput.name = "dni";
+
+            var fechaLabel = document.createElement("label");
+            fechaLabel.innerHTML = "Fecha de nacimiento:";
+            var fechaInput = document.createElement("input");
+            fechaInput.type = "text";
+            fechaInput.name = "fecha";
+
+            div.appendChild(nombreLabel);
+            div.appendChild(nombreInput);
+            div.appendChild(apellidoLabel);
+            div.appendChild(apellidoInput);
+            div.appendChild(dniLabel);
+            div.appendChild(dniInput);
+            div.appendChild(fechaLabel);
+            div.appendChild(fechaInput);
+
+            contenedor.appendChild(div);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Agregar personas al grupo</h1>
+    <form>
+        <div id="contenedor">
+            <div>
+                <label>Nombre:</label>
+                <input type="text" name="nombre">
+                <br>
+                <label>Apellido:</label>
+                <input type="text" name="apellido">
+                <br>
+                <label>DNI:</label>
+                <input type="text" name="dni">
+                <br>
+                <label>Fecha de nacimiento:</label>
+                <input type="text" name="fecha">
+                <br>
+            </div>
+        </div>
+        <input type="button" value="Agregar campo" onclick="agregarCampo()">
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

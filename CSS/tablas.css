@@ -1,0 +1,34 @@
+.contenedorCentro{
+    display: grid;
+    place-items: center;
+    margin: 30px;
+    margin-top: 10000;
+}
+
+table {
+    font-family: sans-serif;
+}
+table th, table td {
+    padding: 0.25em 0.5em;
+    text-align: center;
+}
+table th:nth-child(2), table td:nth-child(2) {
+    text-align: center;
+}
+table td {
+    background-color: #ffffff;
+}
+table th {
+    background-color: #3461c1;
+    color: #fff;
+}
+.zigzag {
+    border-collapse: separate;
+    border-spacing: 0.25em 1em;
+}
+.zigzag tbody tr:nth-child(odd) {
+    transform: rotate(0.7deg);
+}
+.zigzag thead tr, .zigzag tbody tr:nth-child(even) {
+    transform: rotate(-0.7deg);
+}

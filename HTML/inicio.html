@@ -1,87 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Inicio Empleado</title>
 
     <link rel="stylesheet" href="../CSS/carrusel.css">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style1.css">
+    <link rel="stylesheet" href="../CSS/cardempleados.css">
 
 </head>
 
 <body>
-    <nav>
-        <div id="logo"></div>
+    <nav th:replace="/fragments/navbar :: nav"></nav>
 
-        <label for="drop" class="toggle">Menu</label>
-        <input type="checkbox" id="drop" />
-        <ul class="menu">
+    <div class="contenedorEmpleado">
 
-            <li>
-                <label for="drop-1" class="toggle">Compradores +</label>
-                <a href="#">Compradores</a>
-                <input type="checkbox" id="drop-1" />
-                <ul>
-                    <li><a href="#">Cargar Comprador</a></li>
-                    <li><a href="#">Vender Entradas</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <label for="drop-2" class="toggle">Empleados +</label>
-                <a href="#">Empleados</a>
-                <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a href="#">Cargar Empleados</a></li>
-                    <li><a href="#">Listar Empleados</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <label for="drop-2" class="toggle">Juegos +</label>
-                <a href="#">Juegos</a>
-                <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a href="#">Cargar Juegos</a></li>
-                    <li><a href="#">Listar Juegos</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <label for="drop-2" class="toggle">Usuarios +</label>
-                <a href="#">Usuarios</a>
-                <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a href="#">Listar Usuarios</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <label for="drop-2" class="toggle">Perfil +</label>
-                <a href="#">Perfil</a>
-                <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a href="#">Editar Perfil</a></li>
-                    <li><a href="#">Cerrar Sesión</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#">Registrate</a></li>
-            <li><a href="#">Logueate</a></li>
-            <li><a href="#">Inicio</a></li>
-
-        </ul>
-    </nav>
-
-    <div class="contenedorCentro">
-        <div class="card">
-            <div class="image"><span class="text">Foto empleado</span></div>
-            <span class="title">Nombre y Apellido</span>
-            <span class="price">Puesto</span>
+        <article class="profile">
+            <div class="profile-image">
+                <img th:if="${session.usuariosession != null}"><img
+                    th:src="@{/imagen/__${session.usuariosession.legajoDni}__}" />
             </div>
+            <h2 class="profile-username" th:if="${session.usuariosession != null}"
+                th:text="${session.usuariosession.nombreUsuario}"></h2>
+            <small class="profile-user-handle" th:if="${session.usuariosession != null}"
+                th:text="${session.usuariosession.roles}"></small>
+
+            <div class="profile-links">
+                <a href="#" class="link link--icon">
+                    <i class="ph-twitter-logo"></i>
+                </a>
+                <a href="#" class="link link--icon">
+                    <i class="ph-facebook-logo"></i>
+                </a>
+                <a href="#" class="link link--icon">
+                    <i class="ph-instagram-logo"></i>
+                </a>
+            </div>
+        </article>
     </div>
 
 
@@ -116,7 +74,5 @@
     </div>
 
     <script src="../JS/carrusel.js"></script>
-
-</body>
 
 </html>

@@ -1,46 +1,31 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-
-
+<html lang="en">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org%22%3E/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Empleados</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/registro.css">
+    <title>Modificacion Empleados</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/registro.css">
 
 </head>
 
 <body>
    
-    <nav th:replace="/fragments/navbar :: nav"  > </nav>
+    <nav th:replace="/fragments/navbar :: nav"></nav>
 
     <div class="contenedorregistro">
 
-        <form class="form"  th:action="@{/empleados/registro}" method="POST" enctype="multipart/form-data">
-            <span class="signup">Alta de empleado</span>
-            <input type="text" name="nombreUsuario" placeholder="Ingrese nombre y apellido del empleado" class="form--input">
-            <input type="text" name="legajoDni" placeholder="Ingrese Legajo/DNI del empleado" class="form--input">
-            <input type="email" name="email" placeholder="Ingrese el email" class="form--input">
-            <input type="password" name="password" placeholder="Contraseña" class="form--input">
-            <input type="password" name="password2" placeholder="Confirmar Contraseña" class="form--input">
-             <div class="form-group">
-                    <select name="idJuego">  
-                        <option>Seleccionar Juego</option>
-                        <option th:each="juego : ${juegos}"
-                                th:value="${juego.id}" 
-                                th:text="${juego.nombreDelJuego}"
-                                />
-                    </select>
-                </div>
-            <label class="form--input" style="border: 0px solid transparent; text-align: justify;
-            margin: -10px 0px 0px -10px; gap:0; font-size: 14px;">Fecha de nacimiento</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" onchange="calcularEdad()" class="form--input">
-            <label for="edad"></label>
-            <span><input type="text" id="edad" name="edad" readonly class="form--input1"> Años</span>
+        <form class="form" th:action="@{/perfil/__${usuarios.legajoDni}__}" method="POST"  enctype="multipart/form-data">
+            <span class="signup">Modificacion Usuario</span>
+             <input hidden th:value="${usuarios.legajoDni}" name="legajoDni">
+            <input type="text" name="nombreUsuario"  th:value="${usuarios.nombreUsuario}"  placeholder="Ingrese nombre y apellido del empleado" class="form--input">
             
+            <input type="email" name="email" th:value="${usuarios.email}"   placeholder="Ingrese el email" class="form--input">
+            <input type="password" name="password"  placeholder="Contraseña" class="form--input">
+            <input type="password" name="password2"  placeholder="Confirmar Contraseña" class="form--input">
             <div class="subirimagen">
                 <span class="subirimagen-title">Cargá de imagen</span>
                 <p class="subirimagen-paragraph">
@@ -52,7 +37,7 @@
                             src="https://img.freepik.com/vector-premium/avatar-hombre-imagen-perfil-web-masculina-generica_53562-18550.jpg?w=2000"
                             alt="Vista previa de la imagen">
                     </div>
-                    <input type="file" name="archivo " accept="image/*" required="" id="file-input">
+                    <input type="file" name="archivo "   accept="image/*" required="" id="file-input">
                 </label>
             </div>
             <button id="btnModal" class="form--submit">
@@ -101,26 +86,11 @@
 
 
     </div>
-    <script>
-    var edad = document.getElementById("years");
-    
-</script>
 
     <script src="../JS/carrusel.js"></script>
     <script src="../JS/formularioFoto.js"></script>
+    <script src="../JS/calcularFecha.js"></script>
     <script src="../JS/modal.js"></script>
-    <script>
-    function calcularEdad() {
-        var fechaNacimiento = new Date(document.getElementById("fecha_nacimiento").value);
-        var hoy = new Date();
-        var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
-        var mes = hoy.getMonth() - fechaNacimiento.getMonth();
-        if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
-            edad--;
-        }
-        document.getElementById("edad").value = edad;
-    }
-    </script>
     <script>
         calculate(); // Llamar a la función calculate al cargar la página
     </script>
