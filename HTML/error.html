@@ -4,15 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../static/css/error.css">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Error</title>
+    <link rel="shortcut icon" href="../IMG/Mosqueteros.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/error.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navbar.css">
 </head>
 
 <body>
 
-    <nav th:replace="/fragments/navbar :: nav">
+    <!-- <nav th:replace="/fragments/navbar :: nav"></nav> -->
+
+    <nav>
+        <div id="logo"></div>
+
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
+
+            <li>
+                <label for="drop-1" class="toggle">Compradores +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Compradores</a>
+                <input type="checkbox" id="drop-1" />
+                <ul>
+                    <li><a th:href="@{/compradores/registrar}">Registrar</a></li>
+                    <li><a th:href="@{/compradores/modificar}">Modificar</a></li>
+                    <li><a th:href="@{/compradores/listar}">Listar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Empleados +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Empleados</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a th:href="@{/empleados/registrar}">Registrar</a></li>
+                    <li><a th:href="@{/empleados/modificar}">Modificar</a></li>
+                    <li><a th:href="@{/empleados/listar}">Listar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Juegos +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Juegos</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a th:href="@{/juegos/registrar}">Registrar</a></li>
+                    <li><a th:href="@{/juegos/modificar}">Modificar</a></li>
+                    <li><a th:href="@{/juegos/listar}">Listar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Usuarios +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Usuarios</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a th:href="@{/registrar}">Registar</a></li>
+                    <li><a th:href="@{/modificar}">Modificar</a></li>
+                    <li><a th:href="@{/listar}">Listar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Ventas +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP', 'EMP')">Ventas</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a th:href="@{/ventas/registrar}">Realizar Venta</a></li>
+                    <li><a th:href="@{/ventas/listar}">Listar Ventas</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Perfil +</label>
+                <a th:if="${session.usuariosession != null}">Perfil</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a href="#">Editar Mi Perfil</a></li>
+                    <li><a href="/logout">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+
+            <li><a th:if="${session.usuariosession == null}" th:href="@{/login}">Logueate</a></li>
+            <li><a th:href="@{/}">Inicio</a></li>
+
+        </ul>
     </nav>
+
 
     <div class="wrapper">
         <div class="TextHolder">
@@ -44,34 +123,34 @@
     <div class="contenedor">
 
         <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             viewBox="0 24 150 28 " preserveAspectRatio="none">
-        <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 
+            viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 
               58-18 88-18s
               58 18 88 18 
               58-18 88-18 
               58 18 88 18
               v44h-352z" />
-        </defs>
-        <g class="parallax1">
-        <use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1" />
-        </g>
-        <g class="parallax2">
-        <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
-        </g>
-        <g class="parallax3">
-        <use xlink:href="#gentle-wave" x="50" y="9" fill="#3461c1" />
-        </g>
-        <g class="parallax4">
-        <use xlink:href="#gentle-wave" x="50" y="6" fill="#fff" />
-        </g>
+            </defs>
+            <g class="parallax1">
+                <use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1" />
+            </g>
+            <g class="parallax2">
+                <use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
+            </g>
+            <g class="parallax3">
+                <use xlink:href="#gentle-wave" x="50" y="9" fill="#3461c1" />
+            </g>
+            <g class="parallax4">
+                <use xlink:href="#gentle-wave" x="50" y="6" fill="#fff" />
+            </g>
         </svg>
 
 
     </div>
-    
+
     <script src="../static/js/error.js"></script>
-        <script src="../JS/carrusel.js"></script>
+    <script src="../JS/carrusel.js"></script>
 </body>
 
 </html>

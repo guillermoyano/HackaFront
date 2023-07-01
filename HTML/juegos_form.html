@@ -9,14 +9,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Juegos</title>
+    <link rel="shortcut icon" href="../IMG/Mosqueteros.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/registro.css">
+    <link rel="stylesheet" href="../css/navbar.css">
 
 </head>
 
 <body>
     
-    <nav th:replace="/fragments/navbar :: nav"  > </nav>
+    <!-- <nav th:replace="/fragments/navbar :: nav"  > </nav> -->
+
+    <nav>
+        <div id="logo"></div>
+
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
+
+            <li>
+                <label for="drop-1" class="toggle">Compradores +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Compradores</a>
+                <input type="checkbox" id="drop-1" />
+                <ul>
+                    <li><a th:href="@{/compradores/registrar}">Registrar</a></li>
+                    <li><a th:href="@{/compradores/modificar}">Modificar</a></li>
+                    <li><a th:href="@{/compradores/listar}">Listar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Empleados +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Empleados</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a th:href="@{/empleados/registrar}">Registrar</a></li>
+                    <li><a th:href="@{/empleados/modificar}">Modificar</a></li>
+                    <li><a th:href="@{/empleados/listar}">Listar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Juegos +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Juegos</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a th:href="@{/juegos/registrar}">Registrar</a></li>
+                    <li><a th:href="@{/juegos/modificar}">Modificar</a></li>
+                    <li><a th:href="@{/juegos/listar}">Listar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Usuarios +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Usuarios</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a th:href="@{/registrar}">Registar</a></li>
+                    <li><a th:href="@{/modificar}">Modificar</a></li>
+                    <li><a th:href="@{/listar}">Listar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Ventas +</label>
+                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP', 'EMP')">Ventas</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a th:href="@{/ventas/registrar}">Realizar Venta</a></li>
+                    <li><a th:href="@{/ventas/listar}">Listar Ventas</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <label for="drop-2" class="toggle">Perfil +</label>
+                <a th:if="${session.usuariosession != null}">Perfil</a>
+                <input type="checkbox" id="drop-2" />
+                <ul>
+                    <li><a href="#">Editar Mi Perfil</a></li>
+                    <li><a href="/logout">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+
+            <li><a th:if="${session.usuariosession == null}" th:href="@{/login}">Logueate</a></li>
+            <li><a th:href="@{/}">Inicio</a></li>
+
+        </ul>
+    </nav>
 
     <div class="contenedorregistro">
 
@@ -33,7 +112,7 @@
 
 
             <label class="palabrainput" style="font-size: 12px;" for="tipo-juego">Tipo de atracción</label>
-            <select name="tipo-juego" id="tipo-juego" class="form--input" required>
+            <select name="tipo-juego" id="tipo-juego" class="form--input" style="width: 385px; height: 40px;" required>
                 <option value="">Seleccione un tipo de juego</option>
                 <option value="tranquilos">Juegos de adrenalina</option>
                 <option value="ruidosos">Juegos Familiares</option>
@@ -57,7 +136,8 @@
                 </p>
                 <label for="file-input" class="drop-container">
                     <div id="image-preview-container">
-                        <img style="width: 150px; border-radius: 20px;" id="image-preview" src=""
+                        <img style="width: 150px; border-radius: 20px;" id="image-preview"
+                            src="https://img.freepik.com/vector-premium/parque-diversiones-escena-muchos-paseos_1639-11075.jpg?w=2000"
                             alt="Vista previa de la imagen">
                     </div>
                     <input type="file" accept="image/*" name="archivo" required="" id="file-input">
@@ -103,6 +183,7 @@
     <script src="../JS/carrusel.js"></script>
     <script src="../JS/tipodejuego.js"></script>
     <script src="../JS/formularioFoto.js"></script>
+    
 
 </body>
 

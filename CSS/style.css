@@ -1,151 +1,163 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Open Sans", sans-serif;
-    font-size: 22px;
-    line-height: 34px;
-    color: #4b4f5d;
-    text-decoration: none;
-    word-wrap: break-word !important;
-    background: #edf2f4;
-    background-image: url("../IMG/fondo.webp");
-    background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  line-height: 34px;
+  color: #4b4f5d;
+  text-decoration: none;
+  word-wrap: break-word !important;
+  background: #edf2f4;
+  background-image: url("../IMG/fondo.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .toggle,
 [id^="drop"] {
-    display: none;
+  display: none;
 }
+
+
+
+.contenedorregistro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    margin-top: 100px;
+    margin-bottom: 200px;
+  }
 
 /* --------------------------------------------------------------------------------------------- */
 /* --------------------------------------Cuerpo index------------------------------------------- */
 /* --------------------------------------------------------------------------------------------- */
 
 .contenedor {
-    position: fixed;
-    z-index: 5;
-    bottom: 0;
-    left: 0;
-    float: left;
-    width: 100%;
-    height: 60px;
-    max-height: 60px;
-    margin: 0;
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  float: left;
+  width: 100%;
+  height: 60px;
+  max-height: 60px;
+  margin: 0;
 }
 
 .editorial {
-    z-index: 5;
-    bottom: 0;
-    left: 0;
-    float: left;
-    display: fixed;
-    width: 100%;
-    height: 60px;
-    max-height: 60px;
-    margin: 0;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  float: left;
+  display: fixed;
+  width: 100%;
+  height: 60px;
+  max-height: 60px;
+  margin: 0;
 }
 
 .parallax1 > use {
-    animation: move-forever1 10s linear infinite;
-    &:nth-child(1) {
-        animation-delay: -2s;
-    }
+  animation: move-forever1 10s linear infinite;
+  &:nth-child(1) {
+    animation-delay: -2s;
+  }
 }
 
 .parallax2 > use {
-    animation: move-forever2 8s linear infinite;
-    &:nth-child(1) {
-        animation-delay: -2s;
-    }
+  animation: move-forever2 8s linear infinite;
+  &:nth-child(1) {
+    animation-delay: -2s;
+  }
 }
 
 .parallax3 > use {
-    animation: move-forever3 6s linear infinite;
-    &:nth-child(1) {
-        animation-delay: -2s;
-    }
+  animation: move-forever3 6s linear infinite;
+  &:nth-child(1) {
+    animation-delay: -2s;
+  }
 }
 
 .parallax4 > use {
-    animation: move-forever4 4s linear infinite;
-    &:nth-child(1) {
-        animation-delay: -2s;
-    }
+  animation: move-forever4 4s linear infinite;
+  &:nth-child(1) {
+    animation-delay: -2s;
+  }
 }
 
 @keyframes move-forever1 {
-    0% {
-        transform: translate(85px, 0%);
-    }
-    100% {
-        transform: translate(-90px, 0%);
-    }
+  0% {
+    transform: translate(85px, 0%);
+  }
+  100% {
+    transform: translate(-90px, 0%);
+  }
 }
 
 @keyframes move-forever2 {
-    0% {
-        transform: translate(-90px, 0%);
-    }
-    100% {
-        transform: translate(85px, 0%);
-    }
+  0% {
+    transform: translate(-90px, 0%);
+  }
+  100% {
+    transform: translate(85px, 0%);
+  }
 }
 
 @keyframes move-forever3 {
-    0% {
-        transform: translate(85px, 0%);
-    }
-    100% {
-        transform: translate(-90px, 0%);
-    }
+  0% {
+    transform: translate(85px, 0%);
+  }
+  100% {
+    transform: translate(-90px, 0%);
+  }
 }
 
 @keyframes move-forever4 {
-    0% {
-        transform: translate(-90px, 0%);
-    }
-    100% {
-        transform: translate(85px, 0%);
-    }
+  0% {
+    transform: translate(-90px, 0%);
+  }
+  100% {
+    transform: translate(85px, 0%);
+  }
 }
-
-
-
 
 /* ---------------------------------------------------------------------------------------------- */
 /* ------------------------------------------Modal----------------------------------------------- */
 /* ---------------------------------------------------------------------------------------------- */
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    /* cursor: pointer; */
+  color: black;
+  text-decoration: none;
+  /* cursor: pointer; */
 }
