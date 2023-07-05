@@ -7,6 +7,14 @@
     margin-bottom: 100px;
   }
 
+  a{
+    text-decoration: none;
+  }
+
+  a:visited{
+    text-decoration: none;
+  }
+
 .concucharon {
   width: 60vw;
   padding: 3rem;
