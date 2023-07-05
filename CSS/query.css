@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.contenedorEmpleado {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
+.concucharon {
+  width: 60vw;
+  padding: 3rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  border-radius: 3rem;
+  background: #4579e2;
+}
+.concucharon::-webkit-scrollbar {
+  width: 0;
+}
+.concucharon::before {
+  content: "";
+  top: -10rem;
+  left: -10rem;
+  width: 40rem;
+  height: 40rem;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+.concucharon::after {
+  content: "";
+  bottom: 0rem;
+  right: -10rem;
+  width: 40rem;
+  height: 40rem;
+  margin-bottom: -25rem;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 185, 142, 0.6);
+}
+.concucharon .titulin {
+  top: 0;
+  margin: 0;
+  padding: 6rem 0;
+  padding-top: 7rem;
+  position: sticky;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem;
+  box-shadow: 0 7px 2rem #f461c1;
+  background: #cf79b1;
+  border-radius: 40px;
+}
+.concucharon .olin {
+  margin: 0;
+  gap: 1rem;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  place-items: center;
+  flex-direction: column;
+  counter-reset: my-counter;
+}
+.concucharon .olin .lilin {
+  min-width: 20rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 3rem;
+  background: #f461c1;
+  counter-increment: my-counter;
+  padding: 1.1rem 1.5rem 1.1rem 1.5rem;
+}
+.concucharon .olin .lilin::before {
+  content: counter(my-counter) ". ";
+}

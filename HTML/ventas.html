@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Usuarios</title>
+    <title>Ventas</title>
     <link rel="shortcut icon" href="../IMG/Mosqueteros.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/tablas.css">
@@ -17,7 +17,7 @@
 <body>
 
     <nav>
-        <div id="logo"></div>
+        <div id="logo" ></div>
 
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
@@ -56,8 +56,7 @@
                 <label for="drop-2" class="toggle">Usuarios +</label>
                 <a>Usuarios</a>
                 <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a>Registar</a></li>
+                <ul><li><a>Registar</a></li>
                     <li><a>Listar</a></li>
                 </ul>
             </li>
@@ -71,19 +70,19 @@
                     <li><a>Listar Ventas</a></li>
                 </ul>
             </li>
-
+            
             <li>
                 <label for="drop-2" class="toggle">Perfil +</label>
                 <a>Perfil</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
                     <li><a>Editar Datos</a></li>
-                    <li><a>Cambiar Pass</a></li>
+                    <li><a >Cambiar Pass</a></li>
                     <li><a>Cambiar Foto</a></li>
                     <li><a>Cerrar Sesión</a></li>
                 </ul>
             </li>
-
+            
             <li>
                 <a>Logueate</a>
             </li>
@@ -91,69 +90,32 @@
                 <a>Inicio</a>
             </li>
             <li>
-                <img src="../IMG/Luisina.jpg" alt="Imagen de perfil" class="fotito">
+                <img src="../IMG/Luisina.jpg" 
+                alt="Imagen de perfil" class="fotito" >
             </li>
-
+            
         </ul>
     </nav>
-    <div class="content">
-        <div class="cardExito">
-            <div class="headerExito">
-                <div class="imageCheck">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#000000"
-                                d="M20 7L9.00004 18L3.99994 13"></path>
-                        </g>
-                    </svg>
-                </div>
-                <div class="actions">
-                    <button type="button" class="history">Éxito al
-                        eliminar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-
-    <div class="content">
-        <div class="cardEliminar">
-            <div class="headerEliminar">
-                <div class="image"><svg aria-hidden="true" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                        fill="none">
-                        <path
-                            d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-                            stroke-linejoin="round" stroke-linecap="round"></path>
-                    </svg></div>
-
-                <div class="actions">
-                    <button class="desactivate" type="button">Error al
-                        eliminar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
 
     <div class="content">
         <div class="cintaCard shadowCinta">
             <div class="ribbon">
                 <div class="ribbon-stitches-top"></div>
                 <div class="ribbon-content">
-                    <span>Empleados administrativos</span>
+                    <span>Listado de compradores</span>
                 </div>
                 <div class="ribbon-stitches-bottom"></div>
             </div>
         </div>
     </div>
-
     <div class="content">
+
         <div class="container-fluid" style="max-width: 1500px; margin: 0 auto;">
+
             <div class="my-3">
-                <form th:action="@{/listar}">
+                <form th:action="@{/compradores/listar}">
                     <div class="d-flex justify-content-center">
                         <div class="col-md-6 mt-2">
                             <div class="d-flex align-items-center">
@@ -164,8 +126,6 @@
                                     placeholder="Ingrese dni">
                                 <button type="submit" class="form--input" style="width: 100px; height: 40px; background-color: blueviolet; color: white; 
                                     border-radius: 10px"><b>Buscar</b></button>
-                                <button onclick="limpiar()" class="form--input" style="width: 100px; height: 40px; background-color: #54bc9b; color: white; 
-                                    border-radius: 10px"><b>Limpiar</b></button>
                             </div>
                         </div>
                     </div>
@@ -173,38 +133,75 @@
             </div>
         </div>
     </div>
-
-
     <div class="contenedorCentro">
 
         <table class="zigzag">
             <thead>
                 <tr>
-                    <th class="header">Legajo</th>
                     <th class="header">Nombre y Apellido</th>
-                    <th class="header">Imagen</th>
+                    <th class="header">Dni</th>
+                    <th class="header">Edad</th>
                     <th class="header">Email</th>
-                    <th class="header">Rol</th>
+                    <th class="header">Vender entrada</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody th:each="compradores : ${compradores}">
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
+                    <td th:text="${compradores.nombreApellido}"></td>
+                    <td th:text="${compradores.dni}"></td>
+                    <td th:text="${compradores.edad}"></td>
+                    <td th:text="${compradores.email}"></td>
                     <td>
-                        <div class=" col-md-7 ">
-                            <img class="float-left ml-1"
-                                style="width:100px">
-                        </div>
+                        <button class="btnVender" th:if="${compradores.activo == true}">
+                            <a>Venta</a>
+                        </button>
                     </td>
-                    <td></td>
-                    <td></td>
                 </tr>
 
             </tbody>
-
+        </table>
     </div>
 
+
+    <div class="content">
+        <div class="cintaCard shadowCinta">
+            <div class="ribbon">
+                <div class="ribbon-stitches-top"></div>
+                <div class="ribbon-content">
+                    <span>Lista de entradas a vender</span>
+                </div>
+                <div class="ribbon-stitches-bottom"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedorCentro">
+        <table class="zigzag">
+            <thead>
+                <tr>
+                    <th class="header">Nombre y Apellido</th>
+                    <th class="header">Dni</th>
+                    <th class="header">Edad</th>
+                    <th class="header">Email</th>
+                    <th class="header">Vender entrada</th>
+                </tr>
+            </thead>
+            <tbody th:each="compradores : ${compradores}">
+                <tr>
+                    <td th:text="${compradores.nombreApellido}"></td>
+                    <td th:text="${compradores.dni}"></td>
+                    <td th:text="${compradores.edad}"></td>
+                    <td th:text="${compradores.email}"></td>
+                    <td>
+                        <button class="btnVender" th:if="${compradores.activo == true}">
+                            <a>Venta</a>
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
 
     <div class="contenedor">
 
@@ -212,11 +209,11 @@
             viewBox="0 24 150 28 " preserveAspectRatio="none">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 
-    58-18 88-18s
-    58 18 88 18 
-    58-18 88-18 
-    58 18 88 18
-    v44h-352z" />
+                                                              58-18 88-18s
+                                                              58 18 88 18 
+                                                              58-18 88-18 
+                                                              58 18 88 18
+                                                              v44h-352z" />
             </defs>
             <g class="parallax1">
                 <use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1" />
@@ -234,15 +231,9 @@
 
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+
     <script src="/JS/carrusel.js"></script>
-    <script>
-        function limpiar() {
-            document.getElementById("keyword").value = "";
-        }
-    </script>
+
 </body>
 
 </html>

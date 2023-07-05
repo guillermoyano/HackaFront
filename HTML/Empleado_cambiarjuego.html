@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuarios</title>
+    <title>Cambiar Juego</title>
     <link rel="shortcut icon" href="../IMG/Mosqueteros.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/registro.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="../css/navbar.css">
 
 </head>
@@ -17,7 +17,7 @@
 <body>
 
     <nav>
-        <div id="logo"></div>
+        <div id="logo" ></div>
 
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
@@ -56,8 +56,7 @@
                 <label for="drop-2" class="toggle">Usuarios +</label>
                 <a>Usuarios</a>
                 <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a>Registar</a></li>
+                <ul><li><a>Registar</a></li>
                     <li><a>Listar</a></li>
                 </ul>
             </li>
@@ -71,19 +70,19 @@
                     <li><a>Listar Ventas</a></li>
                 </ul>
             </li>
-
+            
             <li>
                 <label for="drop-2" class="toggle">Perfil +</label>
                 <a>Perfil</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
                     <li><a>Editar Datos</a></li>
-                    <li><a>Cambiar Pass</a></li>
+                    <li><a >Cambiar Pass</a></li>
                     <li><a>Cambiar Foto</a></li>
                     <li><a>Cerrar Sesión</a></li>
                 </ul>
             </li>
-
+            
             <li>
                 <a>Logueate</a>
             </li>
@@ -91,37 +90,30 @@
                 <a>Inicio</a>
             </li>
             <li>
-                <img src="../IMG/Luisina.jpg" alt="Imagen de perfil" class="fotito">
+                <img src="../IMG/Luisina.jpg" 
+                alt="Imagen de perfil" class="fotito" >
             </li>
-
+            
         </ul>
     </nav>
-
     <div class="contenedorregistro">
 
-        <form class="form" method="POST" enctype="multipart/form-data">
-            <span class="signup">Alta Usuario</span>
-            <input type="text" name="nombreUsuario" placeholder="Ingrese nombre y apellido del empleado" class="form--input">
-            <input type="text" name="legajoDni" placeholder="Ingrese Legajo/DNI del empleado" class="form--input">
-            <input type="email" name="email" placeholder="Ingrese el email" class="form--input">
-            <input type="password" name="password" placeholder="Contraseña" class="form--input">
-            <input type="password" name="password2" placeholder="Confirmar Contraseña" class="form--input">
-            <div class="subirimagen">
-                <span class="subirimagen-title">Cargá de imagen</span>
-                <p class="subirimagen-paragraph">
-                    Solo formato .jpg
-                </p>
-                <label for="file-input" class="drop-container">
-                    <div id="image-preview-container">
-                        <img style="width: 150px; border-radius: 20px;" id="image-preview"
-                            src="../IMG/fotoperfil.avif"
-                            alt="Vista previa de la imagen">
-                    </div>
-                    <input type="file" name="archivo " accept="image/*" required="" id="file-input">
-                </label>
+        <form class="form" method="POST">
+            <span class="signup">Modificar Juego</span>
+            <input hidden type="number" name="legajoDni" class="form--input">
+            <input type="text" name="nombreUsuario" class="form--input" readonly>
+
+            <label class="palabrainput" style="font-size: 12px;" for="name">Selecciones juego a asignar</label>
+            <div>
+                <select class="form--input" style="width: 385px; height: 40px;" name="idJuego">
+                    <option>Seleccionar Juego</option>
+                    <option>
+                    </option>
+                </select>
             </div>
+            
             <button id="btnModal" class="form--submit">
-                Registrar
+                Modificar
             </button>
 
 
@@ -133,7 +125,6 @@
                     <p>Este es el contenido del modal.</p>
                 </div>
             </div>
-
         </form>
 
     </div>
@@ -166,13 +157,10 @@
 
 
     </div>
-    <script>
-        var edad = document.getElementById("years");
-
-    </script>
 
     <script src="/JS/carrusel.js"></script>
     <script src="/JS/formularioFoto.js"></script>
+    <script src="/JS/calcularFecha.js"></script>
     <script src="/JS/modal.js"></script>
     <script>
         function calcularEdad() {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -9,91 +10,92 @@
     <link rel="shortcut icon" href="../IMG/Mosqueteros.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/tablas.css">
-    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
 
 </head>
 
 <body>
-
-    <!-- <nav th:replace="/fragments/navbar :: nav"  > </nav> -->
-
+    
     <nav>
-        <div id="logo"></div>
+        <div id="logo" ></div>
 
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
         <ul class="menu">
-
             <li>
                 <label for="drop-1" class="toggle">Compradores +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Compradores</a>
+                <a>Compradores</a>
                 <input type="checkbox" id="drop-1" />
                 <ul>
-                    <li><a th:href="@{/compradores/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/compradores/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/compradores/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
 
             <li>
                 <label for="drop-2" class="toggle">Empleados +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Empleados</a>
+                <a>Empleados</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/empleados/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/empleados/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/empleados/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
 
             <li>
                 <label for="drop-2" class="toggle">Juegos +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Juegos</a>
+                <a>Juegos</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/juegos/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/juegos/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/juegos/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
 
             <li>
                 <label for="drop-2" class="toggle">Usuarios +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Usuarios</a>
+                <a>Usuarios</a>
                 <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a th:href="@{/registrar}">Registar</a></li>
-                    <li><a th:href="@{/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/listar}">Listar</a></li>
+                <ul><li><a>Registar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
 
             <li>
                 <label for="drop-2" class="toggle">Ventas +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP', 'EMP')">Ventas</a>
+                <a>Ventas</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/ventas/registrar}">Realizar Venta</a></li>
-                    <li><a th:href="@{/ventas/listar}">Listar Ventas</a></li>
+                    <li><a>Realizar Venta</a></li>
+                    <li><a>Listar Ventas</a></li>
                 </ul>
             </li>
-
+            
             <li>
                 <label for="drop-2" class="toggle">Perfil +</label>
-                <a th:if="${session.usuariosession != null}">Perfil</a>
+                <a>Perfil</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a href="#">Editar Mi Perfil</a></li>
-                    <li><a href="/logout">Cerrar Sesión</a></li>
+                    <li><a>Editar Datos</a></li>
+                    <li><a >Cambiar Pass</a></li>
+                    <li><a>Cambiar Foto</a></li>
+                    <li><a>Cerrar Sesión</a></li>
                 </ul>
             </li>
-
-            <li><a th:if="${session.usuariosession == null}" th:href="@{/login}">Logueate</a></li>
-            <li><a th:href="@{/}">Inicio</a></li>
-
+            
+            <li>
+                <a>Logueate</a>
+            </li>
+            <li>
+                <a>Inicio</a>
+            </li>
+            <li>
+                <img src="../IMG/Luisina.jpg" 
+                alt="Imagen de perfil" class="fotito" >
+            </li>
+            
         </ul>
     </nav>
-
 
     <div class="content">
         <div class="cardExito">
@@ -109,7 +111,7 @@
                     </svg>
                 </div>
                 <div class="actions">
-                    <button type="button" class="history" th:if="${success != null}" th:text="${success}">Éxito al
+                    <button type="button" class="history" >Éxito al
                         eliminar</button>
                 </div>
             </div>
@@ -127,7 +129,7 @@
                     </svg></div>
 
                 <div class="actions">
-                    <button class="desactivate" type="button" th:if="${error != null}" th:text="${error}">Error al
+                    <button class="desactivate" type="button" >Error al
                         eliminar</button>
                 </div>
             </div>
@@ -146,26 +148,37 @@
         </div>
     </div>
 
-    <div class="content">
-        <div class="group">
-            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-                <g>
-                    <path
-                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
-                    </path>
-                </g>
-            </svg>
-            <input class="buscaPalabra" placeholder="Search" type="search" class="input">
+<div class="content">
+        <div class="container-fluid" style="max-width: 1500px; margin: 0 auto;">
+            <div class="my-3">
+                <form>
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-6 mt-2">
+                            <div class="d-flex align-items-center">
+                                <i class="fa fa-search"></i>
+                                <input id="keyword" type="search" name="keyword" th:value="${keyword}"
+                                    class="form--input" style="width: 150px; height: 40px;
+                                background-color: #343945; color: white; border-radius: 10px; text-align: center"
+                                    placeholder="Ingrese el Juego">
+                                <button type="submit" class="form--input" style="width: 100px; height: 40px; background-color: blueviolet; color: white; 
+                                    border-radius: 10px"><b>Buscar</b></button>
+                                    <button onclick="limpiar()" class="form--input" style="width: 100px; height: 40px; background-color: #54bc9b; color: white; 
+                                    border-radius: 10px"><b>Limpiar</b></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
-    <div class="contenedorCentro">
 
+    <div class="contenedorCentro">
         <table class="zigzag">
             <thead>
                 <tr>
-                    <th class="header">Id</th>
                     <th class="header">Nombre del Juego</th>
+                    <th class="header">Imagen</th>
                     <th class="header">Capacidad Max.</th>
                     <th class="header">Tipo</th>
                     <th class="header">Cant. Empleados</th>
@@ -175,35 +188,36 @@
                     <th class="header">Eliminar</th>
                 </tr>
             </thead>
-            <tbody th:each="juegos : ${juegos}">
+            <tbody>
                 <tr>
-                    <th scope="row" th:text="${juegos.id}"></th>
-                    <td th:text="${juegos.nombreDelJuego}"></td>
-                    <td th:text="${juegos.capacidadMaxima}"></td>
-                    <td th:text="${juegos.tipoDeJuego}"></td>
-                    <td th:text="${juegos.cantEmpleados}"></td>
-                    <td th:text="${juegos.fechaDeAlta}"></td>
-                    <td th:text="${juegos.precioDelJuego}"></td>
+                    <th></th>
+                    <td>
+                    <div class=" col-md-7 ">
+              <img class="float-left ml-1" style="max-width:100px">
+            </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td>
                         <button class="btnModificar">
-                            <a th:href="@{/juegos/modificar/__${juegos.id}__}">Modificar</a>
+                            <a>Modificar</a>
                         </button>
                     </td>
                     <td>
                         <button class="btnEliminar">
-                            <a th:href="@{/juegos/eliminar/__${juegos.id}__}">Eliminar
+                            <a>Eliminar
                             </a>
                         </button>
                     </td>
                 </tr>
-
             </tbody>
-
     </div>
 
 
     <div class="contenedor">
-
         <svg class="editorial" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 28 " preserveAspectRatio="none">
             <defs>
@@ -233,8 +247,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-    <script src="../JS/carrusel.js"></script>
-
+    <script src="/JS/carrusel.js"></script>
+    <script>
+    function limpiar() {
+    document.getElementById("keyword").value = "";
+    }
+    </script>
 </body>
 
 </html>

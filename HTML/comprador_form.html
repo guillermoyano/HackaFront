@@ -15,89 +15,91 @@
 </head>
 
 <body>
-    <!-- <nav th:replace="/fragments/navbar :: nav"></nav> -->
-
     <nav>
-        <div id="logo"></div>
+        <div id="logo" ></div>
 
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
         <ul class="menu">
-
             <li>
                 <label for="drop-1" class="toggle">Compradores +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Compradores</a>
+                <a>Compradores</a>
                 <input type="checkbox" id="drop-1" />
                 <ul>
-                    <li><a th:href="@{/compradores/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/compradores/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/compradores/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
 
             <li>
                 <label for="drop-2" class="toggle">Empleados +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Empleados</a>
+                <a>Empleados</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/empleados/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/empleados/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/empleados/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
 
             <li>
                 <label for="drop-2" class="toggle">Juegos +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Juegos</a>
+                <a>Juegos</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/juegos/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/juegos/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/juegos/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
 
             <li>
                 <label for="drop-2" class="toggle">Usuarios +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Usuarios</a>
+                <a>Usuarios</a>
                 <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a th:href="@{/registrar}">Registar</a></li>
-                    <li><a th:href="@{/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/listar}">Listar</a></li>
+                <ul><li><a>Registar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
 
             <li>
                 <label for="drop-2" class="toggle">Ventas +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP', 'EMP')">Ventas</a>
+                <a>Ventas</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/ventas/registrar}">Realizar Venta</a></li>
-                    <li><a th:href="@{/ventas/listar}">Listar Ventas</a></li>
+                    <li><a>Realizar Venta</a></li>
+                    <li><a>Listar Ventas</a></li>
                 </ul>
             </li>
-
+            
             <li>
                 <label for="drop-2" class="toggle">Perfil +</label>
-                <a th:if="${session.usuariosession != null}">Perfil</a>
+                <a>Perfil</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a href="#">Editar Mi Perfil</a></li>
-                    <li><a href="/logout">Cerrar Sesión</a></li>
+                    <li><a>Editar Datos</a></li>
+                    <li><a >Cambiar Pass</a></li>
+                    <li><a>Cambiar Foto</a></li>
+                    <li><a>Cerrar Sesión</a></li>
                 </ul>
             </li>
-
-            <li><a th:if="${session.usuariosession == null}" th:href="@{/login}">Logueate</a></li>
-            <li><a th:href="@{/}">Inicio</a></li>
-
+            
+            <li>
+                <a>Logueate</a>
+            </li>
+            <li>
+                <a>Inicio</a>
+            </li>
+            <li>
+                <img src="../IMG/Luisina.jpg" 
+                alt="Imagen de perfil" class="fotito" >
+            </li>
+            
         </ul>
     </nav>
-   
+
 
     <div class="contenedorregistro">
 
-        <form class="form" th:action="@{/compradores/registro/}" method="POST">
+        <form class="form" method="POST">
             <span class="signup">Registro Compradores</span>
             <label class="palabrainput" style="font-size: 12px;" for="name">Nombre y Apellido*</label>
             <input type="text" name="nombreApellido" required placeholder="Ingrese Nombre y Apellido"
@@ -129,11 +131,11 @@
             viewBox="0 24 150 28 " preserveAspectRatio="none">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 
-    58-18 88-18s
-    58 18 88 18 
-    58-18 88-18 
-    58 18 88 18
-    v44h-352z" />
+58-18 88-18s
+58 18 88 18 
+58-18 88-18 
+58 18 88 18
+v44h-352z" />
             </defs>
             <g class="parallax1">
                 <use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1" />
@@ -164,6 +166,9 @@
             }
             document.getElementById("edad").value = edad;
         }
+    </script>
+    <script>
+        calculate(); // Llamar a la función calculate al cargar la página
     </script>
 </body>
 

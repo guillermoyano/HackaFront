@@ -1,131 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org%22%3E/">
-
+ <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org%22%3E/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificacion Empleados</title>
+    <title>Modificacion de Usuarios</title>
     <link rel="shortcut icon" href="../IMG/Mosqueteros.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/registro.css">
-    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
 
 </head>
 
 <body>
-
-    <!-- <nav th:replace="/fragments/navbar :: nav"></nav> -->
-
+   
     <nav>
-        <div id="logo"></div>
-
+        <div id="logo" ></div>
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
         <ul class="menu">
-
             <li>
                 <label for="drop-1" class="toggle">Compradores +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Compradores</a>
+                <a>Compradores</a>
                 <input type="checkbox" id="drop-1" />
                 <ul>
-                    <li><a th:href="@{/compradores/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/compradores/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/compradores/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
-
             <li>
                 <label for="drop-2" class="toggle">Empleados +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Empleados</a>
+                <a>Empleados</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/empleados/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/empleados/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/empleados/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
-
             <li>
                 <label for="drop-2" class="toggle">Juegos +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Juegos</a>
+                <a>Juegos</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/juegos/registrar}">Registrar</a></li>
-                    <li><a th:href="@{/juegos/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/juegos/listar}">Listar</a></li>
+                    <li><a>Registrar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
-
             <li>
                 <label for="drop-2" class="toggle">Usuarios +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP')">Usuarios</a>
+                <a>Usuarios</a>
                 <input type="checkbox" id="drop-2" />
-                <ul>
-                    <li><a th:href="@{/registrar}">Registar</a></li>
-                    <li><a th:href="@{/modificar}">Modificar</a></li>
-                    <li><a th:href="@{/listar}">Listar</a></li>
+                <ul><li><a>Registar</a></li>
+                    <li><a>Listar</a></li>
                 </ul>
             </li>
-
             <li>
                 <label for="drop-2" class="toggle">Ventas +</label>
-                <a th:if="${session.usuariosession != null}" sec:authorize="hasAnyRole('ADM', 'SUP', 'EMP')">Ventas</a>
+                <a>Ventas</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a th:href="@{/ventas/registrar}">Realizar Venta</a></li>
-                    <li><a th:href="@{/ventas/listar}">Listar Ventas</a></li>
+                    <li><a>Realizar Venta</a></li>
+                    <li><a>Listar Ventas</a></li>
                 </ul>
             </li>
-
             <li>
                 <label for="drop-2" class="toggle">Perfil +</label>
-                <a th:if="${session.usuariosession != null}">Perfil</a>
+                <a>Perfil</a>
                 <input type="checkbox" id="drop-2" />
                 <ul>
-                    <li><a href="#">Editar Mi Perfil</a></li>
-                    <li><a href="/logout">Cerrar Sesión</a></li>
+                    <li><a>Editar Datos</a></li>
+                    <li><a >Cambiar Pass</a></li>
+                    <li><a>Cambiar Foto</a></li>
+                    <li><a>Cerrar Sesión</a></li>
                 </ul>
             </li>
-
-            <li><a th:if="${session.usuariosession == null}" th:href="@{/login}">Logueate</a></li>
-            <li><a th:href="@{/}">Inicio</a></li>
-
+            <li>
+                <a>Logueate</a>
+            </li>
+            <li>
+                <a>Inicio</a>
+            </li>
+            <li>
+                <img src="../IMG/Luisina.jpg" 
+                alt="Imagen de perfil" class="fotito" >
+            </li>
+            
         </ul>
     </nav>
 
     <div class="contenedorregistro">
 
-        <form class="form" th:action="@{/perfil/__${usuarios.legajoDni}__}" method="POST" enctype="multipart/form-data">
+        <form class="form" method="POST" enctype="multipart/form-data">
             <span class="signup">Modificacion Usuario</span>
-            <input hidden th:value="${usuarios.legajoDni}" name="legajoDni">
-            <input type="text" name="nombreUsuario" th:value="${usuarios.nombreUsuario}"
-                placeholder="Ingrese nombre y apellido del empleado" class="form--input">
-
-            <input type="email" name="email" th:value="${usuarios.email}" placeholder="Ingrese el email"
-                class="form--input">
-            <input type="password" name="password" placeholder="Contraseña" class="form--input">
-            <input type="password" name="password2" placeholder="Confirmar Contraseña" class="form--input">
-            <div class="subirimagen">
-                <span class="subirimagen-title">Cargá de imagen</span>
-                <p class="subirimagen-paragraph">
-                    Solo formato .jpg
-                </p>
-                <label for="file-input" class="drop-container">
-                    <div id="image-preview-container">
-                        <img style="width: 150px; border-radius: 20px;" id="image-preview"
-                            src="https://img.freepik.com/vector-premium/avatar-hombre-imagen-perfil-web-masculina-generica_53562-18550.jpg?w=2000"
-                            alt="Vista previa de la imagen">
-                    </div>
-                    <input type="file" name="archivo " accept="image/*" required="" id="file-input">
-                </label>
-            </div>
+            <input type="text" name="nombreUsuario" placeholder="Ingrese nombre y apellido del empleado" class="form--input">
+            <input type="email" name="email" placeholder="Ingrese el email" class="form--input">
             <button id="btnModal" class="form--submit">
                 Modificar
             </button>
-
-
 
             <div id="modal" class="modal">
                 <div class="modal-content">
@@ -168,10 +141,10 @@
 
     </div>
 
-    <script src="../JS/carrusel.js"></script>
-    <script src="../JS/formularioFoto.js"></script>
-    <script src="../JS/calcularFecha.js"></script>
-    <script src="../JS/modal.js"></script>
+    <script src="/JS/carrusel.js"></script>
+    <script src="/JS/formularioFoto.js"></script>
+    <script src="/JS/calcularFecha.js"></script>
+    <script src="/JS/modal.js"></script>
     <script>
         calculate(); // Llamar a la función calculate al cargar la página
     </script>
